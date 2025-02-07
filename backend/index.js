@@ -14,16 +14,16 @@ app.get("/api/weather", async (req, res) => {
 
     try {
         const response = await axios.get(
-            `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
         );
         const data = response.data;
-        
+
         const weatherInfo = {
-            city: data.location.name,
-            temperature: data.current.temp_c,
-            feels_like: data.current.feelslike_c,
-            humidity: data.current.humidity,
-            mode: data.current.condition.text
+            city: data.name,
+            temperature: data.main.temp,
+            feels_like: data.main.feels_like,
+            humidity: data.main.humidity,
+            mode: data.weather[0].main
         };
         
         res.json(weatherInfo);
