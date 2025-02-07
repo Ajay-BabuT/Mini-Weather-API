@@ -13,9 +13,9 @@ document.getElementById("getWeather").addEventListener("click", async () => {
             document.getElementById("weather-result").innerHTML = `
                 <h3>${data.city}</h3>
                 <p>Temperature: ${data.temperature}°C</p>
-                <p>Feels Like: ${data.feels_like}°C</p>
+                <p>Feels Like: ${data.average}°C</p>
                 <p>Humidity: ${data.humidity}%</p>
-                <p>Description: ${data.description}</p>
+                <p>Description: ${data.mode}</p>
             `;
         }
     } catch (error) {
