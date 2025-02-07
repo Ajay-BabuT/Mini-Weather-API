@@ -6,7 +6,8 @@ const cors = require("cors");
 const app = express();
 app.use(cors({ origin: "*" }));
 
-const API_KEY = process.env.WEATHER_API_KEY;
+WEATHER_API_KEY="60c266b148e2d0ffc70d49c945508251"
+const API_KEY = WEATHER_API_KEY;
 
 app.get("/weather", async (req, res) => {
     const city = req.query.city;
