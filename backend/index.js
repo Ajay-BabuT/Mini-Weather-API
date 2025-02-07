@@ -17,7 +17,7 @@ app.get("/api/weather", async (req, res) => {
             `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`
         );
         const data = response.data;
-        console.log(data);
+        
         const weatherInfo = {
             city: data.location.name,
             temperature: data.current.temp_c,
