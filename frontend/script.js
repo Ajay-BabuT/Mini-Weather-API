@@ -1,9 +1,10 @@
+const API_URL="mini-weather-app.vercel.app/weather?city=";
 document.getElementById("getWeather").addEventListener("click", async () => {
     const city = document.getElementById("city").value;
     if (!city) return alert("Please enter a city name");
 
     try {
-        const response = await fetch(`http://localhost:3000/weather?city=${city}`);
+        const response = await fetch(`${API_URL}${city}`);
         const data = await response.json();
 
         if (data.error) {
