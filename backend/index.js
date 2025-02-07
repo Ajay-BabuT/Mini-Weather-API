@@ -7,7 +7,7 @@ app.use(cors());
 
 const API_KEY = "60c266b148e2d0ffc70d49c945508251";
 
-app.get("/weather", async (req, res) => {
+app.get("/api/weather", async (req, res) => {
     const city = req.query.city;
     if (!city) return res.status(400).json({ error: "City is required" });
 
