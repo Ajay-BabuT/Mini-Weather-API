@@ -4,7 +4,7 @@ const axios = require("axios");
 const cors = require("cors");
 
 const app = express();
-app.use(cors({ origin: "*" }));
+app.use(cors());
 
 WEATHER_API_KEY="60c266b148e2d0ffc70d49c945508251"
 const API_KEY = WEATHER_API_KEY;
